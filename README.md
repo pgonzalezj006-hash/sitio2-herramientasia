@@ -1,4 +1,4 @@
-# HerramientasIA — Sitio 2 (MarketIA)
+# HerramientasIA — Sitio 2 (MarketIA) (rediseño visual aplicado 2026-09-22)
 
 Comparativas y reviews de herramientas de inteligencia artificial. Segundo sitio de la red de contenido MarketIA.
 

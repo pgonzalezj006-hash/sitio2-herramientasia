@@ -1,40 +1,31 @@
-# HerramientasIA — Sitio 2 (MarketIA) (rediseño visual aplicado 2026-09-22)
+# HerramientasIA — guiaherramientasia.com
 
-Comparativas y reviews de herramientas de inteligencia artificial. Segundo sitio de la red de contenido MarketIA.
+Sitio estático (HTML + CSS) publicado con **Cloudflare Pages** conectado a este repositorio de GitHub.
+Versión de septiembre de 2026 con todas las mejoras del plan SEO aplicadas.
 
-## Estado: completo, listo para desplegar
+## Cómo publicarlo
 
-- **Dominio:** guiaherramientasia.com (comprado y verificado en DNS)
-- **Despliegue objetivo:** Cloudflare
-- **Contacto compartido de la red:** marketia@iapracticaparanegocios.com (no modificar — ya en uso en todos los sitios de la red)
-- **AdSense publisher ID:** ca-pub-9723862717735653 (misma cuenta que Sitio 1)
-- **Fecha de contenido/schema:** 2026-09-22
+1. Descomprime el ZIP y sube **todo su contenido** a la raíz del repositorio
+   (GitHub → Add file → Upload files → arrastrar → Commit changes).
+2. Cloudflare Pages publica automáticamente en 1-2 minutos (Workers & Pages → proyecto → Deployments).
+3. En Cloudflare, purga la caché: Caching → Configuration → Purge Everything.
+4. En Google Search Console, envía de nuevo `https://guiaherramientasia.com/sitemap.xml`
+   y pide la indexación de la home, las 5 categorías y los 6 artículos nuevos.
 
-## Contenido publicado
+## Direcciones limpias
 
-- 1 página de inicio (`index.html`) con 5 categorías y 22 tarjetas de artículo
-- 22 artículos completos en `articulos/` (pilar + 21), ~1000-1300 palabras cada uno, con FAQ, JSON-LD (Article + FAQPage), CTA interna y bloque de anuncio
-- `sobre-nosotros.html`, `contacto.html`, `politica-privacidad.html`
-- `sitemap.xml` con las 26 URLs del sitio
-- `robots.txt`
+Cloudflare Pages sirve cada página sin `.html` (`/articulos/resena-chatgpt`). Por eso los enlaces internos,
+las etiquetas canónicas y el sitemap usan ya esas direcciones. Los archivos siguen llamándose `.html`.
 
-## Categorías del homepage
+## Imágenes (Gemini)
 
-1. Empieza aquí (3 artículos)
-2. Comparativas generales (4 artículos)
-3. Herramientas por tarea: contenido y diseño (9 artículos)
-4. Herramientas por tarea: productividad y negocio (4 artículos)
-5. Buenas prácticas (2 artículos)
+La web lleva imágenes provisionales (sin texto) para que funcione desde el primer momento.
+`IMAGENES-PROMPTS.md` contiene un prompt por imagen con el nombre de archivo exacto.
+Genera cada imagen en Gemini, guárdala en `_imagenes-gemini/` con ese nombre y, en un Mac,
+ejecuta `bash _herramientas/preparar-imagenes.sh` (recorta a 1200×630, crea la miniatura y sustituye la provisional).
 
-## Notas técnicas
+## Mantenimiento
 
-- `assets/styles.css` y `assets/cookie-consent.js` copiados sin modificar desde Sitio 1 (incluye el fix de especificidad CSS del banner de cookies).
-- Rutas relativas verificadas: raíz usa `assets/...` y `articulos/...`; artículos usan `../assets/...`, `../` y `../articulos/...`.
-- Todos los enlaces internos (homepage → artículos, relacionados, CTA) apuntan a archivos reales creados en este mismo lote — sin placeholders "próximamente".
-- Nombres de herramientas mencionados sin cifras de precio inventadas; se describen posicionamiento y niveles de plan de forma cualitativa.
-
-## Pendiente antes de publicar
-
-- Configurar DNS/despliegue en Cloudflare.
-- Enviar sitemap a Google Search Console tras el despliegue.
-- Revisión final de AdSense una vez el sitio esté en producción.
+- **Precios:** las tablas indican «revisado en septiembre de 2026». Revísalas cada mes.
+- **Cookies y AdSense:** AdSense solo se carga tras pulsar «Aceptar» (`assets/cookie-consent.js`);
+  la verificación de AdSense usa la etiqueta meta `google-adsense-account` y `ads.txt`.

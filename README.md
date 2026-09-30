@@ -27,5 +27,5 @@ ejecuta `bash _herramientas/preparar-imagenes.sh` (recorta a 1200×630, crea la 
 ## Mantenimiento
 
 - **Precios:** las tablas indican «revisado en septiembre de 2026». Revísalas cada mes.
-- **Cookies y AdSense:** AdSense solo se carga tras pulsar «Aceptar» (`assets/cookie-consent.js`);
-  la verificación de AdSense usa la etiqueta meta `google-adsense-account` y `ads.txt`.
+- **Cookies y AdSense:** AdSense se carga en el `<head>` de todas las páginas y el consentimiento lo gestiona la CMP de Google
+  (mensaje RGPD publicado en AdSense); «Configurar cookies» del pie reabre ese mensaje. La verificación de AdSense usa la etiqueta meta `google-adsense-account` y `ads.txt`.
